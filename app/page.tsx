@@ -15,37 +15,37 @@ const caskets = [
   {
     id: 2,
     name: "Peaceful Slumber Oak",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1713985789550-c3988a65f4c8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
     name: "Serenity Cedar",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1715110519338-b5c33a257939?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
     name: "Divine Grace Walnut",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1715110520644-f9e4a8751039?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
     name: "Heavenly Peace Pine",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1715110519031-14ac05e50cc2?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
     name: "Sacred Journey Maple",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1715110518550-8fbd4f1e2eaa?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 7,
     name: "Blessed Rest Cherry",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1725408021124-21990ff260c8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 8,
     name: "Eternal Peace Rosewood",
-    image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
+    image: "https://plus.unsplash.com/premium_photo-1715110520532-7164d61e829e?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
