@@ -10,41 +10,49 @@ const caskets = [
   {
     id: 1,
     name: "Eternal Rest Mahogany",
+    price: "KES 85,000",
     image: "https://images.unsplash.com/photo-1649615318499-c888057747fe?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
     name: "Peaceful Slumber Oak",
+    price: "KES 75,000",
     image: "https://plus.unsplash.com/premium_photo-1713985789550-c3988a65f4c8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 3,
     name: "Serenity Cedar",
+    price: "KES 65,000",
     image: "https://plus.unsplash.com/premium_photo-1715110519338-b5c33a257939?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,
     name: "Divine Grace Walnut",
+    price: "KES 95,000",
     image: "https://plus.unsplash.com/premium_photo-1715110520644-f9e4a8751039?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 5,
     name: "Heavenly Peace Pine",
+    price: "KES 55,000",
     image: "https://plus.unsplash.com/premium_photo-1715110519031-14ac05e50cc2?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 6,
     name: "Sacred Journey Maple",
+    price: "KES 70,000",
     image: "https://plus.unsplash.com/premium_photo-1715110518550-8fbd4f1e2eaa?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 7,
     name: "Blessed Rest Cherry",
+    price: "KES 80,000",
     image: "https://plus.unsplash.com/premium_photo-1725408021124-21990ff260c8?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 8,
     name: "Eternal Peace Rosewood",
+    price: "KES 90,000",
     image: "https://plus.unsplash.com/premium_photo-1715110520532-7164d61e829e?auto=format&fit=crop&w=800&q=80",
   },
 ];
@@ -103,6 +111,7 @@ export default function Home() {
               <NavLink href="/">Home</NavLink>
               <NavLink href="/products">Products</NavLink>
               <NavLink href="/about">About Us</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
             </div>
           </div>
         </div>
@@ -111,18 +120,19 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-48 pb-12 text-center">
         <div className="container mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-serif text-white mb-4">
+          <h1 className="text-5xl md:text-6xl font-serif text-white mb-6">
             Till We Meet Again
           </h1>
-          <p className="text-xl text-gray-300 mb-2">Bringing eternity to life</p>
+          <p className="text-xl text-gray-300 mb-3">Bringing dignity to farewell</p>
           <p className="text-lg tracking-widest text-green-400 font-semibold">HANDCRAFTED CASKETS</p>
         </div>
       </section>
 
       {/* Products Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-serif text-white mb-12 text-center">Our Collection</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {caskets.map((casket) => (
               <ProductCard key={casket.id} {...casket} />
             ))}
@@ -134,7 +144,7 @@ export default function Home() {
       <footer className="bg-gray-900/80 backdrop-blur-md border-t border-gray-800">
         <div className="container mx-auto px-4 py-8">
           <p className="text-center text-gray-400 text-sm">
-            © 2024 Till We Meet Again. All rights reserved. Designed by SpaceBar Creatives
+            © 2024 Till We Meet Again. All rights reserved.
           </p>
         </div>
       </footer>
