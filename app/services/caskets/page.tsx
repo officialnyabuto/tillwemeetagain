@@ -67,7 +67,7 @@ export default function CasketsPage() {
           <h1 className="text-4xl md:text-5xl font-serif text-white mb-12 text-center">
             Our Casket Collection
           </h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
             {caskets.map((casket) => (
               <ProductCard key={casket.id} {...casket} />
             ))}
