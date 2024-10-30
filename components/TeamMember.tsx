@@ -11,13 +11,13 @@ interface TeamMemberProps {
 
 export default function TeamMember({ name, role, image, description }: TeamMemberProps) {
   return (
-    <div className="bg-gray-800/50 backdrop-blur-sm rounded-xl overflow-hidden border border-gray-700">
+    <div className="group bg-gray-900/20 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-800/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] hover:border-green-400/50 transition-all duration-300">
       <div className="aspect-square relative">
         <Image
           src={image}
           alt={name}
           fill
-          className="object-cover"
+          className="object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="p-6">

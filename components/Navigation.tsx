@@ -2,96 +2,47 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
-import { Home, Box, Heart, Phone, Menu, Sun, Moon } from "lucide-react";
-import { useTheme } from "next-themes";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ServicesDropdown from "./ServicesDropdown";
 
-const links = [
-  { href: "/", icon: Home, label: "Home" },
-  { href: "/services", icon: Heart, label: "Services" },
-  { href: "/products", icon: Box, label: "Products" },
-  { href: "/contact", icon: Phone, label: "Contact" },
-];
-
-export function Navigation() {
-  const pathname = usePathname();
-  const [isOpen, setIsOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b">
+    <nav className="fixed top-10 left-0 right-0 z-40 bg-gray-900/40 backdrop-blur-xl border-b border-gray-800/50 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 sm:h-20">
-          <Link href="/" className="text-xl font-semibold">
+        <div className="flex items-center justify-between py-4">
+          <Link href="/" className="text-2xl font-serif text-white hover:text-green-400 transition-colors">
             Till We Meet Again
           </Link>
-
-          <nav className="hidden sm:flex items-center space-x-1">
-            {links.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-colors",
-                  pathname === href
-                    ? "bg-primary text-primary-foreground"
-                    : "hover:bg-accent hover:text-accent-foreground"
-                )}
-              >
-                {label}
-              </Link>
-            ))}
+          
+          <div className="md:hidden">
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="p-2 rounded-full hover:bg-accent"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white hover:text-green-400 transition-colors"
             >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
-          </nav>
+          </div>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="sm:hidden p-2 rounded-full hover:bg-accent"
-          >
-            <Menu size={20} />
-          </button>
+          <div className={cn(
+            "absolute md:relative top-full left-0 right-0 bg-gray-900/90 md:bg-transparent",
+            "md:flex items-center space-x-8",
+            "backdrop-blur-xl md:backdrop-blur-none",
+            "border-b border-gray-800/50 md:border-none",
+            isMenuOpen ? "block" : "hidden"
+          )}>
+            <Link href="/" className="block py-2 px-4 md:p-0 text-gray-300 hover:text-green-400 transition-colors">
+              Home
+            </Link>
+            <ServicesDropdown />
+            <Link href="/about" className="block py-2 px-4 md:p-0 text-gray-300 hover:text-green-400 transition-colors">
+              About Us
+            </Link>
+          </div>
         </div>
       </div>
-
-      {/* Mobile Navigation */}
-      <motion.nav
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-        variants={{
-          open: { opacity: 1, y: 0 },
-          closed: { opacity: 0, y: "100%" },
-        }}
-        transition={{ duration: 0.2 }}
-        className={cn(
-          "fixed bottom-0 left-0 right-0 bg-background/80 backdrop-blur-xl",
-          "border-t flex justify-around items-center py-4 px-6 sm:hidden",
-          isOpen ? "block" : "hidden"
-        )}
-      >
-        {links.map(({ href, icon: Icon, label }) => (
-          <Link
-            key={href}
-            href={href}
-            className={cn(
-              "flex flex-col items-center space-y-1",
-              pathname === href
-                ? "text-primary"
-                : "text-muted-foreground hover:text-foreground"
-            )}
-            onClick={() => setIsOpen(false)}
-          >
-            <Icon size={20} />
-            <span className="text-xs">{label}</span>
-          </Link>
-        ))}
-      </motion.nav>
-    </header>
+    </nav>
   );
 }

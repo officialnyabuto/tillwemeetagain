@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import StyledLayout from '@/components/StyledLayout';
 
 const playfair = Playfair_Display({ subsets: ['latin'] });
@@ -17,11 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} antialiased`}>
-        <StyledLayout playfairFont={playfair.style.fontFamily}>
-          {children}
-        </StyledLayout>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+          disableTransitionOnChange
+        >
+          <StyledLayout playfairFont={playfair.style.fontFamily}>
+            {children}
+          </StyledLayout>
+        </ThemeProvider>
       </body>
     </html>
   );
