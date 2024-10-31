@@ -7,9 +7,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const services = [
   { name: "Caskets", href: "/services/caskets" },
-  { name: "Gravestones", href: "/services/gravestones" },
-  { name: "Urns", href: "/services/urns" },
-  { name: "Memorial Plaques", href: "/services/memorial-plaques" },
+  { name: "Funeral Attire", href: "/services/funeral-attire" },
+  { name: "Memorial Keepsakes", href: "/services/memorial-keepsakes" },
+  { name: "Flowers", href: "/services/flowers" },
 ];
 
 export default function ServicesDropdown() {
@@ -37,8 +37,6 @@ export default function ServicesDropdown() {
             exit={{ opacity: 0, y: 10 }}
             transition={{ duration: 0.2 }}
             className="absolute top-full left-0 mt-2 w-48 rounded-xl bg-gray-900/80 backdrop-blur-xl border border-gray-700 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] overflow-hidden"
-            onMouseEnter={() => setIsOpen(true)}
-            onMouseLeave={() => setIsOpen(false)}
           >
             <div className="py-2">
               {services.map((service) => (
